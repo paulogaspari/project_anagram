@@ -13,12 +13,19 @@
 check_for_anagrams = ['stars', 'mary', 'rats', 'tars', 'army']
 
 
-decomposing_the_string = check_for_anagrams.repeated_permutation(1).to_a
-# or
-# decomposing_the_string = check_for_anagrams.combination(1).to_a
+anagram_groups = [] # create a container
+check_for_anagrams.each do |word| #  #=> stars
+  anagrams = []
+  # anagrams << word
+  check_for_anagrams.each do |another_word| #=> mary
+  	# check if they are anagrams
+  	# if so, put it into anagrams array
+  end
+  anagram_groups << anagrams
+end
 
+puts anagram_groups
 
-decomposing_the_string.each {|x| x.str.each_char.to_a}
+# output
 
-
-	print decomposing_the_string
+ 
