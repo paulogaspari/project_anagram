@@ -25,18 +25,16 @@ check_for_anagrams.each do |word| #  #=> stars
   check_for_anagrams.each do |another_word| #=> mary
   	# check if they are anagrams
 
+
   	if another_word != word && another_word.chars.sort == word.chars.sort 
   		anagrams << word
-  	else
-  		
-
   	end
-  	# if so, put it into anagrams array
+
   end
-
-
   anagram_groups << anagrams
 end
+
+anagram_groups.reject! { |c| c.empty? }
 
 print anagram_groups
 
