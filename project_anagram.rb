@@ -48,20 +48,19 @@ class ProjectAnagram
 
 
   def anagrams(input)
-
-    inside_array = []
-
+    output_array = [] 
     input.each do |pass_one|
+      inside_array = []
       input.each do |pass_two|
         if check_if_anagrams?(pass_one, pass_two)
           inside_array << pass_two
         end
       end
-      output_array = []
+      
       output_array << inside_array
     end
+    output_array.uniq
   end
-
 
 
 end
