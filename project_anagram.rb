@@ -1,43 +1,69 @@
-###########################################################
+######################################################################
 # PROBLEM
 # 
+# 
+# You're given a list of strings, return a list of list
+# of strings of anagrams, i.e. each element of the
+# returned list is a list of words that are anagrams among them.
+# 
+# For example,
+# 
+# input   ['stars', 'mary', 'rats', 'tars', 'army', 'banana']
+# output: [ [rats, tars], [army, mary], [stars], [banana] ].
+# 
+#
+#
+# SOLUTION:
 # Create a container
 # for every word:
 # 	- put it in a container
 # 	- compare to every other word to see if they are anagrams
 # 	- if yes add to the container
 # 
-###########################################################
-
-
-check_for_anagrams = ['stars', 'mary', 'rats', 'tars', 'army', 'banana']
-anagram_groups = [] # create a container
+######################################################################
 
 
 
+class ProjectAnagram
 
 
+# def check_if_anagram(array)
+#   array.each do |first_pass|
+#     array.each do |second_pass|
+#       if first_pass.chars.sort == second_pass.chars.sort
+# end
 
 
-check_for_anagrams.each do |word| #  #=> stars
-  anagrams = []
-  # anagrams << word
-  # anagrams << word
-  check_for_anagrams.each do |another_word| #=> mary
-  	# check if they are anagrams
+  def check_if_anagrams?(word1, word2)
 
-
-  	if another_word.chars.sort == word.chars.sort 
-  		anagrams << another_word
-  	end
-
+    if word1.chars.sort == word2.chars.sort
+      true
+    else
+      false
+    end
 
   end
-  # anagrams << word
-  anagram_groups << anagrams
+
+
+
+
+  def anagrams(input)
+
+    inside_array = []
+
+    input.each do |pass_one|
+      input.each do |pass_two|
+        if check_if_anagrams?(pass_one, pass_two)
+          inside_array << pass_two
+        end
+      end
+      output_array = []
+      output_array << inside_array
+    end
+  end
+
+
+
 end
 
-puts anagram_groups.uniq.inspect
-
-# output
 
